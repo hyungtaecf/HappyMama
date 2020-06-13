@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - HAPPY MAMA</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href='{% static "/css/master.css" %}'>
+    {% block styles %}{% endblock %}
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand">
+            <a href="{% url 'index' %}" class="navbar-brand">
+                <img src='{% static "img/logo.png" %}' alt="Happy Mama">
+            </a>
+            <ul class="navbar-nav w-100 justify-content-between">
+                <li class="nav-item active">
+                    <a href="#services" class="nav-link">our services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#how_to_use" class="nav-link">how to use</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#aboutus" class="nav-link">about us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#advisors" class="nav-link">our team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <nav class="navbar navbar-expand">
+            <ul class="navbar-nav w-100">
+                <li class="nav-item active">
+                    <a href="#services" class="nav-link">our services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#how_to_use" class="nav-link">how to use</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#aboutus" class="nav-link">about us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#advisors" class="nav-link">our team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="other_links d-flex flex-row justify-content-between">
+            <a href="">ホームページ</a>
+            <a href="">コミュニティサイト</a>
+        </div>
+        <div class="social_links d-flex flex-row justify-content-between">
+            <div><a href=""><img src='{% static "img/instagram.svg" %}' alt=""></a></div>
+            <div><a href=""><img src='{% static "img/facebook.svg" %}' alt=""></a></div>
+        </div>
+    </footer>
+    {% block js %}{% endblock %}
+</body>
+</html>
