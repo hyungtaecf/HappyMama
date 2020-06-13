@@ -26,7 +26,7 @@ SECRET_KEY = '^=4$#4)$tw&_-g%(=ai9#!za6%8+hbu4l5n&5i_11nql(*qq*='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','127.0.01']
+ALLOWED_HOSTS = ['localhost','127.0.01','happymama.pythonanywhere.com']
 
 
 # Application definition
