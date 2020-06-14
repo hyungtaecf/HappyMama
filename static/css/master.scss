@@ -61,6 +61,11 @@ header {
             }
         }
     }
+    @media (max-width:767.98px) {
+        .collapse {
+            padding-top: 1rem;
+        }
+    }
     @media (min-width:768px) {
         .navbar {
             min-height: 17vmax!important;
