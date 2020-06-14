@@ -1,14 +1,13 @@
 #launching {
-  min-height: 100vh;
   position: relative;
 }
 
 #launching .launching_text {
-  padding-left: 3rem;
+  padding-left: .5vmax;
 }
 
 #launching .launching_text .title {
-  font-size: 4vmax;
+  font-size: 3vmax;
   line-height: 142.69%;
   font-weight: bold;
   width: 45vw;
@@ -16,47 +15,130 @@
 }
 
 #launching .launching_text .text_block {
-  margin-top: 1rem;
+  margin-top: 1vmax;
 }
 
 #launching .launching_text .text_block p {
-  font-size: 1.8vmax;
-  line-height: 142.69%;
+  font-size: 1.5vmax;
+  line-height: 110%;
   letter-spacing: 0.015em;
   font-weight: 500;
   margin: 0;
 }
 
+#launching .launching_text .text_block .bigger {
+  font-size: 1.6vmax;
+  font-weight: bold;
+  line-height: 110%;
+}
+
 #launching .launching_text .phone {
-  margin-top: 3rem;
-  font-size: 1.8vmax;
+  margin-top: 2vmax;
+  line-height: 100%;
 }
 
 #launching .launching_text .phone img {
   margin-right: .7vw;
+  height: 1.7vmax;
 }
 
-#launching .side_picture img {
-  height: 100vmin;
-  min-height: 40rem;
+#launching .launching_text .phone p {
+  font-size: 1.8vmax;
+  margin-right: 2vmax;
+}
+
+#launching .side_picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#launching .side_picture #cover_img {
+  width: 30vmax;
+  max-width: 50vw;
 }
 
 #launching .bg {
   position: absolute;
-  left: 0;
   top: 50%;
+  right: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   width: 85%;
-  height: 90vmin;
-  min-height: 35rem;
+  height: 32vmax;
   background-color: #FFF175;
   z-index: -1;
 }
 
+@media (max-width: 767.98px) and (orientation: portrait) {
+  #launching .launching_text .title {
+    font-size: 1.7vmax !important;
+    line-height: 142.69% !important;
+  }
+  #launching .launching_text p {
+    margin-top: 0.5vmax;
+    font-size: 1.1vmax !important;
+  }
+  #launching .launching_text .together_if_small {
+    margin-top: 0vmax !important;
+  }
+  #launching .launching_text .phone {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    margin-top: 1vmax;
+  }
+  #launching .launching_text .phone img {
+    height: 1vmax;
+  }
+  #launching .launching_text .phone p {
+    font-size: 1vmax !important;
+    letter-spacing: 0;
+  }
+  #launching .bg {
+    height: 32vmax !important;
+    max-height: 55vw;
+  }
+}
+
+@media (min-width: 768px) {
+  #launching .launching_text {
+    padding-left: 3vmax !important;
+  }
+  #launching .launching_text .title {
+    font-size: 4vmax !important;
+    line-height: 142.69% !important;
+  }
+  #launching .launching_text p {
+    font-size: 1.8vmax !important;
+  }
+  #launching .launching_text .bigger {
+    font-size: 2.3vmax !important;
+  }
+  #launching #cover_img {
+    background-size: cover;
+    width: 45vmax !important;
+    height: 60vmax !important;
+    padding-left: 45vmax;
+  }
+  #launching .bg {
+    left: 0;
+    height: 52vmax !important;
+  }
+}
+
+@media (min-width: 992px) and (orientation: landscape) {
+  #launching {
+    min-height: 100vh;
+  }
+}
+
 .section_title {
   font-family: "Alegreya Sans SC";
-  font-size: 6.5vmax;
+  font-size: 4vmax;
   font-weight: bold;
   color: #50A3F0;
   text-transform: uppercase;
@@ -67,12 +149,20 @@
   margin: 10vmax 0 3vmax;
 }
 
+@media (min-width: 768px) {
+  .section_title {
+    font-size: 6.5vmax !important;
+  }
+}
+
 #services .row .service_card {
   padding-bottom: 2vmax;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 #services .row .service_card .service_card_bg {
-  height: 16vmax;
+  height: 20vmax;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -80,6 +170,19 @@
 
 #services .row .service_card .service_card_bg .darken {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 2vmax 1vmax;
   top: 0;
   left: 0;
@@ -96,46 +199,67 @@
 }
 
 #services .row .service_card .service_card_bg .title {
-  font-size: 2.7vmax;
+  font-size: 2.3vmax;
   color: #fff;
   font-weight: bold;
   z-index: 2;
+  text-align: center;
+  margin-bottom: .5rem;
 }
 
 #services .row .service_card .service_card_bg .description {
-  font-size: 2vmax;
+  font-size: 1.5vmax;
   color: #fff;
   font-weight: bold;
   z-index: 2;
+  text-align: center;
 }
 
-#services .row > :nth-child(odd) {
-  padding-left: 3rem;
-}
-
-#services .row > :nth-child(even) {
-  padding-right: 3rem;
-  padding-left: 1.5rem;
+@media (min-width: 992px) {
+  #services .row > :nth-child(odd) {
+    padding-right: 0 !important;
+    padding-left: 3rem !important;
+  }
+  #services .row > :nth-child(even) {
+    padding-right: 3rem !important;
+    padding-left: 0 !important;
+  }
+  #services .row .service_card .service_card_bg {
+    height: 16vmax !important;
+  }
+  #services .row .service_card .service_card_bg .darken {
+    display: block !important;
+  }
+  #services .row .service_card .service_card_bg .darken .title {
+    margin: 0 !important;
+    font-size: 2.7vmax !important;
+    text-align: left !important;
+  }
+  #services .row .service_card .service_card_bg .darken .description {
+    font-size: 2vmax !important;
+    text-align: left !important;
+  }
 }
 
 #how_to_use .row {
   font-family: Alegreya Sans SC;
   font-weight: bold;
-  padding: 0 12vmax;
+  padding: 0 4vmax;
 }
 
 #how_to_use .row p {
   text-transform: uppercase;
   font-size: 1.5vmax;
+  margin-bottom: .7vmax;
 }
 
 #how_to_use .row .circle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 6vmax;
-  width: 6vmax;
-  font-size: 3vmax;
+  height: 5vmax;
+  width: 5vmax;
+  font-size: 2vmax;
   border-radius: 50%;
   background-color: #FFF48D;
   -webkit-box-pack: center;
@@ -144,12 +268,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 3vmax;
+  margin-bottom: 2vmax;
 }
 
 #how_to_use .row .icon {
-  height: 8vmax;
+  height: 5.5vmax;
   margin-bottom: 2vmax;
+}
+
+#how_to_use .row .icon #pointing_hand {
+  height: 7.5vmax;
+  top: -1vmax;
+  left: -4vmax;
 }
 
 #how_to_use .row .caption {
@@ -157,28 +287,73 @@
 }
 
 #how_to_use .row .arrow {
-  padding-top: 10vmax;
+  padding: 10vmax 1vmax 0;
 }
 
 #how_to_use .row .arrow img {
-  height: 5vmax;
+  height: 3vmax;
+}
+
+@media (min-width: 768px) {
+  #how_to_use .row {
+    padding: 0 12vmax !important;
+  }
+  #how_to_use .row .circle {
+    height: 6vmax !important;
+    width: 6vmax !important;
+    font-size: 3vmax !important;
+    margin-bottom: 3vmax !important;
+  }
+  #how_to_use .row .icon {
+    height: 8vmax !important;
+  }
+  #how_to_use .row .icon #pointing_hand {
+    height: 12vmax !important;
+    top: -2vmax !important;
+    left: -6vmax !important;
+  }
+  #how_to_use .row .arrow {
+    padding: 10vmax 0 0 !important;
+  }
+  #how_to_use .row .arrow img {
+    height: 5vmax !important;
+  }
 }
 
 #aboutus .aboutus_text {
-  padding-bottom: 4rem;
+  padding: 0 4vmax;
 }
 
 #aboutus .aboutus_text p {
   font-family: "Reem Kufi";
-  font-size: 2vmax;
-  line-height: 100%;
+  font-weight: bold;
+  font-size: 1.2vmax;
+  line-height: 164.5%;
   text-align: center;
   width: 100%;
   letter-spacing: 0;
+  margin: 0;
 }
 
 #aboutus img {
   width: 100%;
+  margin-bottom: 3vmax;
+}
+
+@media (min-width: 768px) {
+  #aboutus img {
+    background-size: contain;
+    height: 45vw !important;
+    padding-left: 100vw;
+    margin-bottom: 0 !important;
+  }
+  #aboutus .aboutus_text {
+    padding-bottom: 4rem !important;
+  }
+  #aboutus .aboutus_text p {
+    font-size: 2vmax !important;
+    font-weight: normal;
+  }
 }
 
 #advisors {
@@ -188,27 +363,60 @@
 #advisors .subsection .subsection_title {
   font-family: "Alegreya Sans SC";
   font-weight: bold;
-  font-size: 3.5vmax;
+  font-size: 2.5vmax;
   line-height: 127.1%;
   letter-spacing: 0.015em;
   color: #50A3F0;
-  margin: 7vmax 0 2vmax;
+  margin: 5vmax 0 2vmax;
+  width: 100%;
+  text-align: center;
 }
 
-#advisors .subsection img {
+#advisors .subsection .advisor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2vmax;
+}
+
+#advisors .subsection .advisor img {
   height: 22vmax;
   margin: 2vmax 2vmax 2vmax 0;
 }
 
-#advisors .subsection p {
+#advisors .subsection .advisor p {
   margin: 0;
-  font-size: 2vmax;
+  font-size: 1.6vmax;
   line-height: 147.1%;
   letter-spacing: 0.015em;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  #advisors .subsection .subsection_title {
+    text-align: start !important;
+    font-size: 3.5vmax !important;
+    margin: 7vmax 0 2vmax !important;
+  }
+  #advisors .subsection .advisor {
+    margin: 0 !important;
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+  }
+  #advisors .subsection .advisor p {
+    text-align: start !important;
+    font-size: 2vmax !important;
+  }
 }
 
 #contact {
-  padding: 0 15vmax 10vmax;
+  padding: 0 4vmax;
 }
 
 #contact label {
@@ -222,16 +430,46 @@
 
 #contact input,
 #contact textarea {
-  margin-bottom: 3.5vmax;
-  font-size: 1.5vmax;
+  font-size: 1.2vmax;
   border-radius: 2rem;
   border: 0.15vmax solid #000;
-  padding: 2vmax;
+  padding: 1vmax 2vmax;
   resize: none;
 }
 
 #contact input:focus,
 #contact textarea:focus {
   border: 0.15vmax solid #50A3F0;
+}
+
+#contact input {
+  margin-bottom: 3.5vmax;
+}
+
+#contact textarea {
+  margin-bottom: 2.5vmax;
+}
+
+#contact button {
+  border: none;
+  background-color: #FFF48D;
+  border-radius: 3.5rem;
+  font-weight: bold;
+  font-size: 1.5vmax;
+  line-height: 2vmax;
+  text-align: center;
+  padding: 1vmax 9vmax;
+  margin-bottom: 5vmax;
+}
+
+@media (min-width: 768px) {
+  #contact {
+    padding: 0 15vmax !important;
+  }
+  #contact input,
+  #contact textarea {
+    font-size: 1.5vmax !important;
+    padding: 2vmax !important;
+  }
 }
 /*# sourceMappingURL=index.css.map */
