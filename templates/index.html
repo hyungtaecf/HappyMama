@@ -17,16 +17,22 @@
 {% endblock %}
 {% block content %}
     <!-- Launching -->
-    <section id="launching" class="d-flex flex-row justify-content-between">
+    <section id="launching">
+      <div class="title d-md-none">共にあなたのビジネスを より良くしましょう！</div>
+      <div class="launching_main_content d-flex flex-row justify-content-between">
       <div class="bg fadeIn"></div>
-        <div class="side_picture order-md-12">
+        <div class="side_picture order-md-12 d-flex flex-column justify-content-center">
             <img id="cover_img" src='{% static "img/naomi 4.png" %}' alt="">
+            <div class="d-flex flex-row justify-content-center d-md-none">
+              <div class="bigger" style="font-family: Reem Kufi">CEO</div>
+              <div class="bigger">伊東 奈緒美</div>
+            </div>
         </div>
         <div class="launching_text d-flex flex-column justify-content-center order-md-1">
-            <div class="title">共にあなたのビジネスを より良くしましょう！</div>
+            <div class="title d-none d-md-block">共にあなたのビジネスを より良くしましょう！</div>
             <div class="text_block">
-                <div class="bigger" style="font-family: Reem Kufi">CEO</div>
-                <div class="bigger">伊東 奈緒美</div>
+                <div class="bigger d-none d-md-block" style="font-family: Reem Kufi">CEO</div>
+                <div class="bigger d-none d-md-block">伊東 奈緒美</div>
             </div>
             <div class="text_block">
                 <p>アメリカ出身・留学経験(日本、韓国)・トリリンガル</p>
@@ -39,6 +45,7 @@
                 <p>090-1885-1440</p>
             </div>
         </div>
+      </div>
     </section>
     <!-- !Launching -->
 
@@ -159,13 +166,9 @@
         <div class="aboutus_text order-md-1 fadeInUp">
           <p>コミュニティサイトだからこそできる事。</p>
           <p>我々の強みを活かしたサービス提供を行っております。</p>
-          <p>HappyMamaコミュニティには様々な得意分野を持ったスペシャリストが集まっています。</p>
-          <p>そのネットワークを活かし、あなたが必要としているサービスを提供いたします。</p>
+          <p>HappyMamaコミュニティには様々な得意分野を持ったスペシャリストが集まっています。そのネットワークを活かし、あなたが必要としているサービスを提供いたします。</p>
           <p>例えば、アンケートで現状の問題点を把握し、予算面を含めた解決策を検討・提案して、実現しております。</p>
-          <p>このような問題発見、現状の把握、解決策の検討、</p>
-          <p>実施の流れを得意とするので、将来的にはネットワークを増やし、</p>
-          <p>より多くの分野の情報を必要としている女性のサポートをで</p>
-          <p>きるようになりたいと考えています。</p>
+          <p>このような問題発見、現状の把握、解決策の検討、実施の流れを得意とするので、将来的にはネットワークを増やし、より多くの分野の情報を必要としている女性のサポートをできるようになりたいと考えています。</p>
         </div>
     </section>
     <!-- !About Us -->

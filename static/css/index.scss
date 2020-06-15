@@ -1,118 +1,143 @@
 @import './variables';
 #launching {
-    position: relative;
-    .launching_text {
-        padding-left: .5vmax;
-        .title {
-            font-size: 3vmax;
-            line-height: 142.69%;
-            font-weight: bold;
-            width: 45vw;
-            color: $primary;
-        }
-        .text_block {
-            margin-top: 1vmax;
-            p {
-                font-size: 1.5vmax;
-                line-height: 110%;
-                letter-spacing: 0.015em;
-                font-weight: 500;
-                margin: 0;
-            }
-            .bigger {
-                font-size: 1.6vmax;
-                font-weight: bold;
-                line-height: 110%;
-            }
-        }
-        .phone {
-            margin-top: 2vmax;
-            line-height: 100%;
-            img {
-                margin-right: .7vw;
-                height: 1.7vmax;
-            }
-            p {
-                font-size: 1.8vmax;
-                margin-right: 2vmax;
-            }
-        }
+    .title {
+        font-size: 3vmax;
+        line-height: 142.69%;
+        font-weight: bold;
+        width: 45vw;
+        color: $primary;
     }
-    .side_picture {
-        display: flex;
-        align-items: center;
-        #cover_img {
-            width: 30vmax;
-            max-width: 50vw;
-        }
+    .bigger {
+        font-size: 1.6vmax;
+        font-weight: bold;
+        line-height: 200%;
+        padding: 0 .5vmax;
     }
-    .bg {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-        width: 85%;
-        height: 32vmax;
-        background-color: $accent2;
-        z-index: -1;
-    }
-    @media(max-width:767.98px) and (orientation: portrait) {
+    .launching_main_content {
+        position: relative;
         .launching_text {
-            .title {
-                font-size: 1.7vmax!important;
-                line-height: 142.69%!important;
-            }
-            p {
-                margin-top: 0.5vmax;
-                font-size: 1.1vmax!important;
-            }
-            .together_if_small {
-                margin-top: 0vmax!important;
+            padding-left: 0;
+            padding-right: .5vmax;
+            .text_block {
+                margin-top: 1vmax;
+                p {
+                    font-size: 1.5vmax;
+                    line-height: 130%;
+                    letter-spacing: 0.015em;
+                    font-weight: 500;
+                    margin: 0;
+                }
             }
             .phone {
-                justify-content: end;
-                margin-top: 1vmax;
+                margin-top: 2vmax;
+                line-height: 100%;
                 img {
-                    height: 1vmax;
+                    margin-right: .7vw;
+                    height: 1.7vmax;
                 }
                 p {
-                    font-size: 1vmax!important;
-                    letter-spacing: 0;
+                    font-size: 1.8vmax;
+                    margin-right: 2vmax;
                 }
+            }
+        }
+        .side_picture {
+            padding: 0 0 0 .75vmax;
+            display: flex;
+            align-items: center;
+            #cover_img {
+                width: 24vmax;
+                max-width: 50vw;
             }
         }
         .bg {
-            height: 32vmax!important;
-            max-height: 55vw;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 32vmax;
+            background-color: $accent2;
+            z-index: -1;
+        }
+    }
+    @media(max-width:767.98px) and (orientation: portrait) {
+        .title {
+            font-size: 2.1vmax;
+            letter-spacing: -.25vmax;
+            margin: 3vmax 0;
+            width: 100%;
+            text-align: center;
+        }
+        .launching_main_content {
+            .launching_text {
+                .title {
+                    font-size: 1.7vmax!important;
+                    line-height: 142.69%!important;
+                }
+                p {
+                    margin-top: 0.5vmax;
+                    font-size: 1.5vmax!important;
+                }
+                .together_if_small {
+                    margin-top: 0vmax!important;
+                }
+                .phone {
+                    justify-content: end;
+                    margin-top: 1vmax;
+                    img {
+                        height: 1vmax;
+                    }
+                    p {
+                        font-size: 1vmax!important;
+                        letter-spacing: 0;
+                    }
+                }
+            }
+            .bg {
+                height: 32vmax!important;
+                max-height: 55vw;
+            }
         }
     }
     @media(min-width:768px) {
-        .launching_text {
-            padding-left: 3vmax!important;
-            .title {
-                font-size: 4vmax!important;
-                line-height: 142.69%!important;
+        .launching_main_content {
+            .launching_text {
+                padding-left: 3vmax!important;
+                padding-right: 0;
+                .title {
+                    font-size: 4vmax!important;
+                    line-height: 142.69%!important;
+                }
+                p {
+                    font-size: 1.8vmax!important;
+                    line-height: 110%;
+                }
+                .bigger {
+                    font-size: 2.3vmax!important;
+                    line-height: 110%;
+                    padding: 0;
+                }
             }
-            p {
-                font-size: 1.8vmax!important;
+            .side_picture {
+                padding: 0;
+                #cover_img {
+                    background-size: cover;
+                    width: 45vmax!important;
+                    height: 60vmax!important;
+                    padding-left: 45vmax;
+                }
             }
-            .bigger {
-                font-size: 2.3vmax!important;
+            .bg {
+                left: 0;
+                height: 52vmax!important;
+                width: 85%;
             }
-        }
-        #cover_img {
-            background-size: cover;
-            width: 45vmax!important;
-            height: 60vmax!important;
-            padding-left: 45vmax;
-        }
-        .bg {
-            left: 0;
-            height: 52vmax!important;
         }
     }
     @media(min-width:992px) and (orientation: landscape) {
-        min-height: 100vh;
+        .launching_main_content {
+            min-height: 100vh;
+        }
     }
 }
 
@@ -283,7 +308,7 @@
         p {
             font-family: "Reem Kufi";
             font-weight: bold;
-            font-size: 1.2vmax;
+            font-size: 1.6vmax;
             line-height: 164.5%;
             text-align: center;
             width: 100%;

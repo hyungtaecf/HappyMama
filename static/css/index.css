@@ -1,12 +1,4 @@
-#launching {
-  position: relative;
-}
-
-#launching .launching_text {
-  padding-left: .5vmax;
-}
-
-#launching .launching_text .title {
+#launching .title {
   font-size: 3vmax;
   line-height: 142.69%;
   font-weight: bold;
@@ -14,40 +6,51 @@
   color: #50A3F0;
 }
 
-#launching .launching_text .text_block {
+#launching .bigger {
+  font-size: 1.6vmax;
+  font-weight: bold;
+  line-height: 200%;
+  padding: 0 .5vmax;
+}
+
+#launching .launching_main_content {
+  position: relative;
+}
+
+#launching .launching_main_content .launching_text {
+  padding-left: 0;
+  padding-right: .5vmax;
+}
+
+#launching .launching_main_content .launching_text .text_block {
   margin-top: 1vmax;
 }
 
-#launching .launching_text .text_block p {
+#launching .launching_main_content .launching_text .text_block p {
   font-size: 1.5vmax;
-  line-height: 110%;
+  line-height: 130%;
   letter-spacing: 0.015em;
   font-weight: 500;
   margin: 0;
 }
 
-#launching .launching_text .text_block .bigger {
-  font-size: 1.6vmax;
-  font-weight: bold;
-  line-height: 110%;
-}
-
-#launching .launching_text .phone {
+#launching .launching_main_content .launching_text .phone {
   margin-top: 2vmax;
   line-height: 100%;
 }
 
-#launching .launching_text .phone img {
+#launching .launching_main_content .launching_text .phone img {
   margin-right: .7vw;
   height: 1.7vmax;
 }
 
-#launching .launching_text .phone p {
+#launching .launching_main_content .launching_text .phone p {
   font-size: 1.8vmax;
   margin-right: 2vmax;
 }
 
-#launching .side_picture {
+#launching .launching_main_content .side_picture {
+  padding: 0 0 0 .75vmax;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,82 +59,96 @@
           align-items: center;
 }
 
-#launching .side_picture #cover_img {
-  width: 30vmax;
+#launching .launching_main_content .side_picture #cover_img {
+  width: 24vmax;
   max-width: 50vw;
 }
 
-#launching .bg {
+#launching .launching_main_content .bg {
   position: absolute;
   top: 50%;
-  right: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  width: 85%;
+  width: 100%;
   height: 32vmax;
   background-color: #FFF175;
   z-index: -1;
 }
 
 @media (max-width: 767.98px) and (orientation: portrait) {
-  #launching .launching_text .title {
+  #launching .title {
+    font-size: 2.1vmax;
+    letter-spacing: -.25vmax;
+    margin: 3vmax 0;
+    width: 100%;
+    text-align: center;
+  }
+  #launching .launching_main_content .launching_text .title {
     font-size: 1.7vmax !important;
     line-height: 142.69% !important;
   }
-  #launching .launching_text p {
+  #launching .launching_main_content .launching_text p {
     margin-top: 0.5vmax;
-    font-size: 1.1vmax !important;
+    font-size: 1.5vmax !important;
   }
-  #launching .launching_text .together_if_small {
+  #launching .launching_main_content .launching_text .together_if_small {
     margin-top: 0vmax !important;
   }
-  #launching .launching_text .phone {
+  #launching .launching_main_content .launching_text .phone {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: end;
     margin-top: 1vmax;
   }
-  #launching .launching_text .phone img {
+  #launching .launching_main_content .launching_text .phone img {
     height: 1vmax;
   }
-  #launching .launching_text .phone p {
+  #launching .launching_main_content .launching_text .phone p {
     font-size: 1vmax !important;
     letter-spacing: 0;
   }
-  #launching .bg {
+  #launching .launching_main_content .bg {
     height: 32vmax !important;
     max-height: 55vw;
   }
 }
 
 @media (min-width: 768px) {
-  #launching .launching_text {
+  #launching .launching_main_content .launching_text {
     padding-left: 3vmax !important;
+    padding-right: 0;
   }
-  #launching .launching_text .title {
+  #launching .launching_main_content .launching_text .title {
     font-size: 4vmax !important;
     line-height: 142.69% !important;
   }
-  #launching .launching_text p {
+  #launching .launching_main_content .launching_text p {
     font-size: 1.8vmax !important;
+    line-height: 110%;
   }
-  #launching .launching_text .bigger {
+  #launching .launching_main_content .launching_text .bigger {
     font-size: 2.3vmax !important;
+    line-height: 110%;
+    padding: 0;
   }
-  #launching #cover_img {
+  #launching .launching_main_content .side_picture {
+    padding: 0;
+  }
+  #launching .launching_main_content .side_picture #cover_img {
     background-size: cover;
     width: 45vmax !important;
     height: 60vmax !important;
     padding-left: 45vmax;
   }
-  #launching .bg {
+  #launching .launching_main_content .bg {
     left: 0;
     height: 52vmax !important;
+    width: 85%;
   }
 }
 
 @media (min-width: 992px) and (orientation: landscape) {
-  #launching {
+  #launching .launching_main_content {
     min-height: 100vh;
   }
 }
@@ -327,7 +344,7 @@
 #aboutus .aboutus_text p {
   font-family: "Reem Kufi";
   font-weight: bold;
-  font-size: 1.2vmax;
+  font-size: 1.6vmax;
   line-height: 164.5%;
   text-align: center;
   width: 100%;
