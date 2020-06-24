@@ -20,4 +20,6 @@ from .views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',Home.as_view(),name='index'),
+    path('tax_auditing/',TaxAuditing.as_view(),name='tax_auditing'),
+    # path('send_email/',SendEmail.as_view(),name='send_email'),
 ]

@@ -58,8 +58,8 @@
             <div class="service_card fadeInUp">
               <div class="service_card_bg" style="background-image: url({% static 'img/ourservices1.png' %});">
                 <div class="darken">
-                  <div class="title">海外進出支援</div>
-                  <div class="description">あなたの会社の海外進出を成功的にしてみませんか？</div>
+                  <div class="title">投資マッチング</div>
+                  <div class="description">起業家・経営者と投資家をマッチングして、大きなビジネスチャンスを創り出します</div>
                 </div>
               </div>
             </div>
@@ -102,7 +102,7 @@
           </a>
         </div>
         <div class="col-lg-6">
-          <a href="#">
+          <a href="{% url 'tax_auditing' %}">
             <div class="service_card fadeInUp">
               <div class="service_card_bg" style="background-image: url({% static 'img/ourservices5.png' %});">
                 <div class="darken">
@@ -118,8 +118,8 @@
             <div class="service_card fadeInUp">
               <div class="service_card_bg" style="background-image: url({% static 'img/ourservices6.png' %});">
                 <div class="darken">
-                  <div class="title">バナー広告</div>
-                  <div class="description">インターネット広告に関するサービス。HappyMamaのホームページに是非あなたの商品を。</div>
+                  <div class="title">デジタル・コンテンツサービス</div>
+                  <div class="description">システム開発・ホームページ制作・デザイン全般・SEO/MEO対策・SNS集客・Webコンサル</div>
                 </div>
               </div>
             </div>
@@ -219,17 +219,18 @@
     <!-- Contact Us -->
     <section id="contact">
         <div class="section_title">contact us</div>
-        <form action="POST">
-            <label for="">お名前</label>
-            <input type="text" class="form-control">
-            <label for="">フリガナ（カナ）</label>
-            <input type="text" class="form-control">
-            <label for="">EMAIL</label>
-            <input type="text" class="form-control">
-            <label for="">電話番号</label>
-            <input type="text" class="form-control">
-            <label for="">ご希望なさるサービス</label>
-            <textarea name="name" rows="5" cols="80" class="form-control"></textarea>
+        <form id="contact_form" method="POST" data-url='{{ request.build_absolute_uri|safe }}'> {# action="{% url 'send_email' %}" #}
+            {% csrf_token %}
+            <label for="name">お名前</label>
+            <input name="name" type="text" class="form-control" value="">
+            <label for="fonetic">フリガナ（カナ）</label>
+            <input name="fonetic" type="text" class="form-control">
+            <label for="email">EMAIL</label>
+            <input name="email" type="text" class="form-control">
+            <label for="phone">電話番号</label>
+            <input name="phone" type="text" class="form-control">
+            <label for="message">ご希望なさるサービス</label>
+            <textarea name="message" rows="5" cols="80" class="form-control"></textarea>
             <div class="d-flex justify-content-center">
               <button type="submit" name="button">送信</button>
             </div>
@@ -238,6 +239,68 @@
     <!-- !Contact Us -->
 {% endblock %}
 {% block js %}
-<script src='{% static "js/wow.min.js" %}'></script>
-<script>new WOW().init();</script>
+{# <script src='{% static "js/wow.min.js" %}'></script> #}
+{# <script>new WOW().init();</script> #}
+
+<script type="text/javascript">
+// using jQuery
+function getCookie(name) {
+  var cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+          var cookie = jQuery.trim(cookies[i]);
+          // Does this cookie string begin with the name we want?
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+          }
+      }
+  }
+  return cookieValue;
+}
+
+var csrftoken = getCookie('csrftoken');
+
+function csrfSafeMethod(method) {
+  // these HTTP methods do not require CSRF protection
+  return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+  beforeSend: function(xhr, settings) {
+      if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+          xhr.setRequestHeader("X-CSRFToken", csrftoken);
+      }
+  }
+});
+</script>
+<script type="text/javascript">
+  $(document).ready(()=>{
+    var $myForm = $('#contact_form')
+    $myForm.submit(function(event){
+      event.preventDefault()
+      var $formData = $(this).serialize()
+      var $endPoint = $myForm.attr('data-url') || window.location.href //or set your own url
+      $.ajax({
+        method: "POST",
+        url: $endPoint,
+        data: $formData,
+        success: handleFormSuccess,
+        error: handleFormError,
+      })
+    })
+
+    function handleFormSuccess(data, textStatus, jqXHR){
+      alert("Your message was sent successfully.")
+      $myForm[0].reset();
+    }
+
+    function handleFormError(jqXHR, textStatus, errorThrown){
+      alert('Your message could not be sent. Please verify if there are no typos in the form fields. If it persists, please try another time or send a message to our email "info@happymama.jp".')
+      console.log(textStatus)
+      console.log(errorThrown)
+    }
+
+  })
+</script>
 {% endblock %}
