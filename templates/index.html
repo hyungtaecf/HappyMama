@@ -1,0 +1,306 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href='{% static "/css/index.css" %}'>
+<link rel="stylesheet" href='{% static "css/animate.css" %}'/>
+<style media="screen">
+  @media(min-width:768px){
+    #cover_img {
+      background: url({% static "img/naomi 3.png" %}) no-repeat;
+    }
+    #aboutus_img{
+      background: url({% static "img/aboutus.png" %}) no-repeat;
+    }
+  }
+</style>
+{% endblock %}
+{% block content %}
+    <!-- Launching -->
+    <section id="launching">
+      <div class="title d-md-none">共にあなたのビジネスを より良くしましょう！</div>
+      <div class="launching_main_content d-flex flex-row justify-content-between">
+      <div class="bg fadeIn"></div>
+        <div class="side_picture order-md-12 d-flex flex-column justify-content-center">
+            <img id="cover_img" src='{% static "img/naomi 4.png" %}' alt="">
+            <div class="d-flex flex-row justify-content-center d-md-none">
+              <div class="bigger" style="font-family: Reem Kufi">CEO</div>
+              <div class="bigger">伊東 奈緒美</div>
+            </div>
+        </div>
+        <div class="launching_text d-flex flex-column justify-content-center order-md-1">
+            <div class="title d-none d-md-block">共にあなたのビジネスを より良くしましょう！</div>
+            <div class="text_block">
+                <div class="bigger d-none d-md-block" style="font-family: Reem Kufi">CEO</div>
+                <div class="bigger d-none d-md-block">伊東 奈緒美</div>
+            </div>
+            <div class="text_block">
+                <p>アメリカ出身・留学経験(日本、韓国)・トリリンガル</p>
+            </div>
+            <div class="text_block together_if_small">
+                <p>アメリカのIndiana University–Purdue University Indianapolis（IUPUI）を卒業後、就職し営業経験をへて起業家として経験を積み、現在は日本を拠点にHappyMamaを通して経験を活かした様々なサービス提供を行っています。</p>
+            </div>
+            <div class="phone d-flex flex-row">
+                <div><img src='{% static "img/phone.svg" %}' alt="phone icon"></div>
+                <p>090-1885-1440</p>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- !Launching -->
+
+    <!-- Our services -->
+    <section id="services">
+      <div class="section_title fadeInUp">our services</div>
+      <div class="row">
+        <div class="col-lg-6">
+          <a href="#">
+            <div class="service_card fadeInUp">
+              <div class="service_card_bg" style="background-image: url({% static 'img/ourservices1.png' %});">
+                <div class="darken">
+                  <div class="title">投資マッチング</div>
+                  <div class="description">起業家・経営者と投資家をマッチングして、大きなビジネスチャンスを創り出します</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a href="#">
+            <div class="service_card fadeInUp">
+              <div class="service_card_bg" style="background-image: url({% static 'img/ourservices2.png' %});">
+                <div class="darken">
+                  <div class="title">飲食店フランチャイズ</div>
+                  <div class="description">自分で、お店を持ちたいその夢を叶えます。</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a href="#">
+            <div class="service_card fadeInUp">
+              <div class="service_card_bg" style="background-image: url({% static 'img/ourservices3.png' %});">
+                <div class="darken">
+                  <div class="title">医療アドバイザー</div>
+                  <div class="description">あなたの体や心に不安や心配事はありませんか？小さいことでも、お答えします！</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a href="#">
+            <div class="service_card fadeInUp">
+              <div class="service_card_bg" style="background-image: url({% static 'img/ourservices4.png' %});">
+                <div class="darken">
+                  <div class="title">アパレルブランドコンサルト</div>
+                  <div class="description">なかなか結果が出ないそんなあなたに、 コンサルティングを通してより効率いい ビジネスを現実化させて見ませんか？</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a href="{% url 'tax_auditing' %}">
+            <div class="service_card fadeInUp">
+              <div class="service_card_bg" style="background-image: url({% static 'img/ourservices5.png' %});">
+                <div class="darken">
+                  <div class="title">税務監督・最適化サービス</div>
+                  <div class="description">コストの最適化を実現</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a href="#">
+            <div class="service_card fadeInUp">
+              <div class="service_card_bg" style="background-image: url({% static 'img/ourservices6.png' %});">
+                <div class="darken">
+                  <div class="title">デジタル・コンテンツサービス</div>
+                  <div class="description">システム開発・ホームページ制作・デザイン全般・SEO/MEO対策・SNS集客・Webコンサル</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- !Our services -->
+
+    <!-- How To Use -->
+    <section id="how_to_use">
+        <div class="section_title fadeInUp">how to use</div>
+        <div class="row">
+            <div class="d-flex flex-column flex-grow-1 align-items-center slideInLeft">
+                <p>step</p>
+                <div class="circle">1</div>
+                <div class="icon position-relative">
+                  <img id="pointing_hand" src='{% static "img/howtouse1.png" %}' class="position-absolute">
+                </div>
+                <div class="caption">合うサービスを探す</div>
+            </div>
+            <div class="arrow slideInLeft"><img src='{% static "img/arrow_forward.png" %}' alt="forward arrow"></div>
+            <div class="d-flex flex-column flex-grow-1 align-items-center slideInLeft">
+                <p>step</p>
+                <div class="circle">2</div>
+                <img src='{% static "img/howtouse2.png" %}' class="icon">
+                <div class="caption">申請する</div>
+            </div>
+            <div class="arrow slideInLeft"><img src={% static "img/arrow_forward.png" %} alt="forward arrow"></div>
+            <div class="d-flex flex-column flex-grow-1 align-items-center slideInLeft">
+                <p>step</p>
+                <div class="circle">3</div>
+                <img src='{% static "img/howtouse3.png" %}' class="icon">
+                <div class="caption">サービスを受ける</div>
+            </div>
+        </div>
+    </section>
+    <!-- !How To Use -->
+
+    <!-- About Us -->
+    <section id="aboutus" class="d-flex flex-column">
+        <div class="section_title fadeInUp">about us</div>
+        <img id="aboutus_img" class="order-md-12 fadeIn" src='{% static "img/aboutus_square.png" %}' alt="">
+        <div class="aboutus_text order-md-1 fadeInUp">
+          <p>コミュニティサイトだからこそできる事。</p>
+          <p>我々の強みを活かしたサービス提供を行っております。</p>
+          <p>HappyMamaコミュニティには様々な得意分野を持ったスペシャリストが集まっています。そのネットワークを活かし、あなたが必要としているサービスを提供いたします。</p>
+          <p>例えば、アンケートで現状の問題点を把握し、予算面を含めた解決策を検討・提案して、実現しております。</p>
+          <p>このような問題発見、現状の把握、解決策の検討、実施の流れを得意とするので、将来的にはネットワークを増やし、より多くの分野の情報を必要としている女性のサポートをできるようになりたいと考えています。</p>
+        </div>
+    </section>
+    <!-- !About Us -->
+
+    <!-- Advisors -->
+    <section id="advisors">
+        <div class="section_title fadeInUp">advisors</div>
+        <div class="subsection">
+            <div class="subsection_title fadeInUp">医療アドバイザー</div>
+            <div class="advisor align-items-center fadeInUp">
+                <img src='{% static "img/advisors1a.png" %}' alt="">
+                <div class="">
+                  <strong><p>医師 (Medical Doctor) 細田 亮 Toru Hosoda</p></strong>
+                  <p>千葉大学医学部卒業。総合内科専門医・血液専門医。2015年4月よりくぬぎ山ファミリー クリニック院長を務める(千葉県鎌ケ谷市)。在宅診療に従事する傍ら、障がい者スポー ツ医としての活動や、カンボジア医療奉仕活動を行う。AIDS問題や死生学にも関心があ り、著書『スピリチュアルペイン』を2019年7月に発刊。趣味はバレーボール。</p>
+                </div>
+            </div>
+            <div class="advisor align-items-center fadeInUp">
+              <img src='{% static "img/advisors1b.png" %}' alt="">
+                <div class="">
+                  <strong><p>歯科医師 (Dentist) 矢野 孝星 Kosei Yano</p></strong>
+                  <p>岡山大学歯学部卒業。東京医科歯科大学歯周病学分野にて博士号を取得。骨再生/代謝の 研究に携わる。その後、同大学病院勤務を経て、都内歯科クリニックの院長に就任。再生 療法やインプラント治療が専門。「健康な身体は口でしっかり食べることから」がモッ トー。趣味は写真。</p>
+                </div>
+            </div>
+        </div>
+        <div class="subsection fadeInUp">
+            <div class="subsection_title">デジタルメディアアドバイザー</div>
+            <div class="advisor align-items-center">
+                <img src='{% static "img/advisors2.png" %}' alt="">
+                <div class="">
+                  <strong><p>成田　玲香</p></strong>
+                  <p>日本生まれ日本育ちですが、コートジボワールの父と日本人の母の間に生まれました。小さい頃から両親が国際的な視野を持っていたので、自然に世界に目を向くようになりました。映像や情報だけではなく、アジアでは韓国、その他にもヨーロッパ、アメリカなどいろんな場所に訪ね、直接文化に触れ合ってきました。また、大学では韓国でメディア、コミュニケーションについて学び、技術としてはカメラや映像編集、ウェブデザインを学んだ経験を生かし、活動しています。</p>
+                </div>
+            </div>
+        </div>
+        <div class="subsection fadeInUp">
+            <div class="subsection_title">税務監督・最適化アドバイザー</div>
+            <div class="advisor align-items-center">
+                <img src='{% static "img/advisors3.png" %}' alt="">
+                <div class="">
+                  <strong><p>飯塚　孝明</p></strong>
+                  <p>私は仕事をすることは価値を創り出すことだと考えています。 私たちは夢をもって起業家の道をスタートした経営者の方へのパートナーシップを結び、専門家としての価値を最大限提供し、共に成長し、繁栄に貢献することを喜びとしています。おかげさまで、これまでも多くの経営者の方とそのような喜びを共にすることが出来ました。 これからも専門性を磨き、経営者の方の良きパートナーとしてワクワクする未来を共に創っていきたいと思っております。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- !Advisors -->
+
+    <!-- Contact Us -->
+    <section id="contact">
+        <div class="section_title">contact us</div>
+        <form id="contact_form" method="POST" data-url='{{ request.build_absolute_uri|safe }}'> {# action="{% url 'send_email' %}" #}
+            {% csrf_token %}
+            <label for="name">お名前</label>
+            <input name="name" type="text" class="form-control" value="">
+            <label for="fonetic">フリガナ（カナ）</label>
+            <input name="fonetic" type="text" class="form-control">
+            <label for="email">EMAIL</label>
+            <input name="email" type="text" class="form-control">
+            <label for="phone">電話番号</label>
+            <input name="phone" type="text" class="form-control">
+            <label for="message">ご希望なさるサービス</label>
+            <textarea name="message" rows="5" cols="80" class="form-control"></textarea>
+            <div class="d-flex justify-content-center">
+              <button type="submit" name="button">送信</button>
+            </div>
+        </form>
+    </section>
+    <!-- !Contact Us -->
+{% endblock %}
+{% block js %}
+{# <script src='{% static "js/wow.min.js" %}'></script> #}
+{# <script>new WOW().init();</script> #}
+
+<script type="text/javascript">
+// using jQuery
+function getCookie(name) {
+  var cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+          var cookie = jQuery.trim(cookies[i]);
+          // Does this cookie string begin with the name we want?
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+          }
+      }
+  }
+  return cookieValue;
+}
+
+var csrftoken = getCookie('csrftoken');
+
+function csrfSafeMethod(method) {
+  // these HTTP methods do not require CSRF protection
+  return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+  beforeSend: function(xhr, settings) {
+      if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+          xhr.setRequestHeader("X-CSRFToken", csrftoken);
+      }
+  }
+});
+</script>
+<script type="text/javascript">
+  $(document).ready(()=>{
+    var $myForm = $('#contact_form')
+    $myForm.submit(function(event){
+      event.preventDefault()
+      var $formData = $(this).serialize()
+      var $endPoint = $myForm.attr('data-url') || window.location.href //or set your own url
+      $.ajax({
+        method: "POST",
+        url: $endPoint,
+        data: $formData,
+        success: handleFormSuccess,
+        error: handleFormError,
+      })
+    })
+
+    function handleFormSuccess(data, textStatus, jqXHR){
+      alert("Your message was sent successfully.")
+      $myForm[0].reset();
+    }
+
+    function handleFormError(jqXHR, textStatus, errorThrown){
+      alert('Your message could not be sent. Please verify if there are no typos in the form fields. If it persists, please try another time or send a message to our email "info@happymama.jp".')
+      console.log(textStatus)
+      console.log(errorThrown)
+    }
+
+  })
+</script>
+{% endblock %}
